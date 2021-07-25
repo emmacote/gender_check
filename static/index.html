@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Gender Checker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style type="text/css">
+        .male {
+            font-weight: bold;
+            color: blue;
+        }
+
+        .female {
+            font-weight: bold;
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 align="center">Gender Checker</h1>
+    </div class="row mainrow">
+        <div class="col-xs-6 interfaceColumn">
+            <div class="row explanationrow">
+                <div class="col-xs-12">
+                    <b>Explanation: </b><br />
+                    Words can potentially indicate the gender of the author.
+                    This tool analyzes word choice to try to determine that gender.
+                    <br />
+                    The text is evaluated based on either formal or informal writing styles.
+                    Formal writing includes stories and news articles.
+                    Whereas informal writing includes things like blog posts.
+                    You should view the results based on what kind of writing you're submitting.
+                    <br /><br />
+                </div>
+            </div>
+            <div class="row inputtitlerow">
+                <div class="col-xs-6">
+                    Type text to analyze here:
+                </div>
+            </div>
+            <div class="row inputWidgetRow">
+                <div class="col-xs-6">
+                    <textarea id="inputText" cols="65" rows="10"></textarea>
+                </div>
+            </div>
+            <div class="row analysisStatRow">
+                <div class="col-xs-12">
+                    <br />
+                    <table class="table">
+                        <tr>
+                            <td colspan="2">
+                                Word Count: <span id="wordCount">345</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Informal Score:
+                            </td>
+                            <td>
+                                Formal Score:
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Female: <span id="femaleInformalScore"></span>
+                            </td>
+                            <td>
+                                Female: <span id="femaleFormalScore"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Male: <span id="maleInformalScore"></span>
+                            </td>
+                            <td>
+                                Male: <span id="maleFormalScore"></span>
+                            </td>
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-3 maleWordColumn">
+            <b><u>Male Formal Words</u></b>
+            <ul id="maleFormalWordList">
+            </ul>
+            <br /><br />
+            <b><u>Male Informal Words</u></b>
+            <ul id="maleInformalWordList">
+            </ul>
+        </div>
+        <div class="col-xs-3 femaleWordColumn">
+            <b><u>Female Formal Words</u></b>
+            <ul id="femaleFormalWordList">
+            </ul>
+            <br /><br />
+            <b><u>Female Informal Words</u></b>
+            <ul id="femaleInformalWordList">
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<script src="gendercheck.js"></script>
+</body>
+</html>
