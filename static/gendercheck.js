@@ -13,7 +13,7 @@ $(function(w){
             var newListItem;
             for(formalKey in formalDict){
                 newListItem = $("<li></li>");
-                newListItem.text(formalKey);
+                newListItem.text(formalKey + "    (" + formalDict[formalKey] + ")");
                 if(formalDict[formalKey] >= 0){
                     formalMaleWordList.append(newListItem);
                 }
@@ -32,7 +32,7 @@ $(function(w){
 
             for(informalKey in informalDict){
                 newListItem = $("<li></li>");
-                newListItem.text(informalKey);
+                newListItem.text(informalKey + "    (" + informalDict[informalKey] + ")");
 
                 if(informalDict[informalKey] >= 0){
                     informalMaleWordList.append(newListItem);
