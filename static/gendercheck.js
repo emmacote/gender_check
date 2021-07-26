@@ -72,6 +72,25 @@ $(function(w){
             $("#maleInformalScore").text(maleInformalScore);
             $("#femaleInformalScore").text(femaleInformalScore);
             $("#wordCount").text(wordCount);
+
+            // score
+            let informalDifference = maleInformalScore - femaleInformalScore;
+            let formalDifference = maleFormalScore - femaleFormalScore;
+            $("#informalDifference").text(informalDifference);
+            $("#formalDifference").text(formalDifference);
+            if(informalDifference <= 0){
+                $("#informalVerdict").text("Female");
+            }
+            else{
+                $("#informalVerdict").text("Male");
+            }
+
+            if(formalDifference <= 0){
+                $("#formalVerdict").text("Female");
+            }
+            else{
+                $("#formalVerdict").text("Male");
+            }
         };
 
         const failure = function(msg){
