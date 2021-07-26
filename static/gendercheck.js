@@ -14,7 +14,6 @@ $(function(w){
             for(formalKey in formalDict){
                 newListItem = $("<li></li>");
                 newListItem.text(formalKey);
-                // console.log("formal word: " + formalKey + " value: " + formalDict[formalKey]);
                 if(formalDict[formalKey] >= 0){
                     formalMaleWordList.append(newListItem);
                 }
@@ -51,8 +50,8 @@ $(function(w){
 
     };
 
-    populateWordLists();
 
+    populateWordLists();
 
 
     const refreshScore = function(){
@@ -85,15 +84,12 @@ $(function(w){
                 informalStrength = "WEAK ";
             }
 
-
             let formalStrength = "";
             let formalPercent = maleFormalScore / (maleFormalScore + femaleFormalScore);
             formalPercent = formalPercent * 100;
             if(formalPercent > 40 && formalPercent < 60){
                 formalStrength = "WEAK ";
             }
-
-
 
             $("#informalDifference").text(informalDifference + " -- " + informalPercent.toPrecision(4) + "%");
             $("#formalDifference").text(formalDifference + " -- " + formalPercent.toPrecision(4) + "%");
