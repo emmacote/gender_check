@@ -2,7 +2,7 @@
 #####by Emma Cote
 
 ## What it does
-Gender Check draws inspiration from "Gender Guesser [found here.](http://www.hackerfactor.com/GenderGuesser.php))
+Gender Check draws inspiration from "Gender Guesser [found here.](http://www.hackerfactor.com/GenderGuesser.php)
 It works by guessing your gender via analysis of text you submit.
 
 ## How Gender Checker Differs
