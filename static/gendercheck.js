@@ -75,17 +75,23 @@ $(function(w){
             // informal and formal difference scoring
             let informalDifference = maleInformalScore - femaleInformalScore;
             let formalDifference = maleFormalScore - femaleFormalScore;
-            let informalPercent = 0;
             let informalStrength = "";
 
-            informalPercent = maleInformalScore / (maleInformalScore + femaleInformalScore);
+            let informalPercent = 0;
+            if(maleInformalScore + femaleInformalScore != 0){
+                informalPercent = maleInformalScore / (maleInformalScore + femaleInformalScore);
+            }
             informalPercent = informalPercent * 100;
+
             if(informalPercent > 40 && informalPercent < 60){
                 informalStrength = "WEAK ";
             }
 
             let formalStrength = "";
-            let formalPercent = maleFormalScore / (maleFormalScore + femaleFormalScore);
+            let formalPercent = 0;
+            if(maleInformalScore + femaleFormalScore != 0){
+                formalPercent = maleFormalScore / (maleFormalScore + femaleFormalScore);
+            }
             formalPercent = formalPercent * 100;
             if(formalPercent > 40 && formalPercent < 60){
                 formalStrength = "WEAK ";
