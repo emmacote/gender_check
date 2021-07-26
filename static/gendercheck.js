@@ -73,23 +73,45 @@ $(function(w){
             $("#femaleInformalScore").text(femaleInformalScore);
             $("#wordCount").text(wordCount);
 
-            // score
+            // informal and formal difference scoring
             let informalDifference = maleInformalScore - femaleInformalScore;
             let formalDifference = maleFormalScore - femaleFormalScore;
-            $("#informalDifference").text(informalDifference);
-            $("#formalDifference").text(formalDifference);
-            if(informalDifference <= 0){
-                $("#informalVerdict").text("Female");
-            }
-            else{
-                $("#informalVerdict").text("Male");
+            let informalPercent = 0;
+            let informalStrength = "";
+
+            informalPercent = maleInformalScore / (maleInformalScore + femaleInformalScore);
+            informalPercent = informalPercent * 100;
+            if(informalPercent > 40 && informalPercent < 60){
+                informalStrength = "WEAK ";
             }
 
-            if(formalDifference <= 0){
-                $("#formalVerdict").text("Female");
+
+            let formalStrength = "";
+            let formalPercent = maleFormalScore / (maleFormalScore + femaleFormalScore);
+            formalPercent = formalPercent * 100;
+            if(formalPercent > 40 && formalPercent < 60){
+                formalStrength = "WEAK ";
+            }
+
+
+
+            $("#informalDifference").text(informalDifference + " -- " + informalPercent.toPrecision(4) + "%");
+            $("#formalDifference").text(formalDifference + " -- " + formalPercent.toPrecision(4) + "%");
+
+            // informal verdict score
+            if(informalDifference <= 0){
+                $("#informalVerdict").text( informalStrength + "Female");
             }
             else{
-                $("#formalVerdict").text("Male");
+                $("#informalVerdict").text( informalStrength + "Male");
+            }
+
+            // formal verdict score
+            if(formalDifference <= 0){
+                $("#formalVerdict").text( formalStrength + "Female");
+            }
+            else{
+                $("#formalVerdict").text( formalStrength + "Male");
             }
         };
 
